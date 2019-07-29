@@ -7,7 +7,7 @@ const ArticleTemplate = ({ data }) => (
 <Layout>
 <h1>{data.strapiArticle.title}</h1>
 <p>by <Link to={`/authors/User_${data.strapiArticle.authora.id}`}>{data.strapiArticle.authora.username}</Link></p>
-<Img fixed={data.strapiArticle.image.childImageSharp.fixed}/>
+<Img fluid={data.strapiArticle.image.childImageSharp.fluid}/>
 <p>{data.strapiArticle.content}</p>
 </Layout>
 )
@@ -21,8 +21,8 @@ export const query = graphql`
       content
       image {
           childImageSharp {
-            fixed(width: 200, height: 125) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 960) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
