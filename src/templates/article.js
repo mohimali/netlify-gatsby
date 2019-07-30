@@ -6,13 +6,11 @@ import ReactMarkdown from "react-markdown"
 
 const ArticleTemplate = ({data}) => (
     <Layout>
-        <h1>XXXXXXX</h1>
+        <h1>{data.strapiArticle.title}</h1>
         <p>by <Link to={`/authors/User_${data.strapiArticle.authora.id}`}>{data.strapiArticle.authora.username}</Link>
         </p>
         <Img fluid={data.strapiArticle.image.childImageSharp.fluid}/>
-            <h1>testttttt</h1>
             <ReactMarkdown source={data.strapiArticle.content} />
-
     </Layout>
 )
 
