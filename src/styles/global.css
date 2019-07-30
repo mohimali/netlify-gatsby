@@ -6,3 +6,21 @@
 .indexArticle img{
     display: none;
 }
+
+.articleContent{
+    display:block;
+    margin: 0 auto;
+    max-width: 400px;
+
+}
+
+.articleContent .small {
+    width: 100%;
+    max-width: 250px;
+}
+
+
+.articleContent .large {
+    width: 100%;
+    max-width: 600px;
+}
