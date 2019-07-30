@@ -10,7 +10,10 @@ const ArticleTemplate = ({data}) => (
         <p>by <Link to={`/authors/User_${data.strapiArticle.authora.id}`}>{data.strapiArticle.authora.username}</Link>
         </p>
         <Img fluid={data.strapiArticle.image.childImageSharp.fluid}/>
-            <ReactMarkdown source={data.strapiArticle.content} />
+            <ReactMarkdown
+                source={data.strapiArticle.content}
+                transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}
+            />
     </Layout>
 )
 
